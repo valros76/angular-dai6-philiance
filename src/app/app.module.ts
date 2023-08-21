@@ -8,7 +8,6 @@ import { BrowserModule } from '@angular/platform-browser';
 */
 import { AppComponent } from './app.component';
 import { WebSnapComponent } from './web-snap/web-snap.component';
-import { ObservablesPreviewComponent } from './observables-preview/observables-preview.component';
 
 /**
  * Pour déclarer ce fichier comme un module, on utilise le décorateur @NgModule, qui utilise 
