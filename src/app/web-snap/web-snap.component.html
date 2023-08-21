@@ -1,0 +1,18 @@
+<div class="web-snap-card">
+    <h2>
+        {{ webSnap.title }}
+    </h2>
+
+    <img [src]="webSnap.imageUrl" [alt]="webSnap.title">
+
+    <p>{{ webSnap.description }}</p>
+    <small>Mise en ligne : {{ webSnap.createdDate }}</small>
+
+    <button 
+        [class]="webSnap.likeBtnClass" 
+        (click)="onLike()"
+    >
+        👍 {{ webSnap.likes }}
+    </button>
+
+</div>
