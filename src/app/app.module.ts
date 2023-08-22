@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { registerLocaleData } from '@angular/common';
+import * as fr from "@angular/common/locales/fr";
 
 /**
  * Dans le fichier app.module.ts, qui est le module de notre composant App (le composant principal de notre
@@ -28,12 +30,20 @@ import { WebSnapComponent } from './web-snap/web-snap.component';
   declarations: [
     AppComponent,
     WebSnapComponent,
-    ObservablesPreviewComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: "fr-FR"
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){
+    registerLocaleData(fr.default);
+  }
+}

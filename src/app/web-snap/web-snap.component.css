@@ -1,5 +1,22 @@
 .web-snap-card{
-    width:35dvw;
+    width:min(45dvw, 50dvw);
+    display:inline-flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+    text-align:center;
+    background-color:#fff;
+    color:rgb(0,0,0);
+    box-shadow:
+    0 0 3px 0 #fff,
+    0 0 6px 0 #6f6c39;
+    border-radius:0.25rem;
+    padding:.5rem 1rem;
+    margin: 1rem .5rem;
+}
+
+.web-snap-card-liked{
+  background-color:#6f6c391a;
 }
 
 .web-snap-card img{
