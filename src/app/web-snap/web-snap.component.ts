@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {WebSnap} from "../models/web-snap.model";
+import { WebSnapsService } from '../services/web-snaps.service';
 
 @Component({
   selector: 'app-web-snap',
@@ -9,21 +10,21 @@ import {WebSnap} from "../models/web-snap.model";
 export class WebSnapComponent implements OnInit{
   @Input() webSnap!: WebSnap;
 
+  constructor(
+    public webSnapsService: WebSnapsService
+  ){}
+
   ngOnInit(): void{
   }
 
   onLike(): void{
     switch(this.webSnap.isLiked){
       case true:
-        this.webSnap.likes--;
-        this.webSnap.likeBtnClass = "like-cta";
-        this.webSnap.isLiked = false;
+        this.webSnapsService.likeWebSnapById(this.webSnap.id, "unlike");
       break;
       case false:
       default:
-        this.webSnap.likes++;
-        this.webSnap.likeBtnClass = "like-cta-active";
-        this.webSnap.isLiked = true;
+        this.webSnapsService.likeWebSnapById(this.webSnap.id, "like");
       break;
     }
   }

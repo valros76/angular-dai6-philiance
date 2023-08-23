@@ -10,6 +10,9 @@ import * as fr from "@angular/common/locales/fr";
 */
 import { AppComponent } from './app.component';
 import { WebSnapComponent } from './web-snap/web-snap.component';
+import { WebSnapListComponent } from './web-snap-list/web-snap-list.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 /**
  * Pour déclarer ce fichier comme un module, on utilise le décorateur @NgModule, qui utilise 
@@ -30,6 +33,9 @@ import { WebSnapComponent } from './web-snap/web-snap.component';
   declarations: [
     AppComponent,
     WebSnapComponent,
+    WebSnapListComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule

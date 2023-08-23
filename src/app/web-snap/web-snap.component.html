@@ -12,10 +12,8 @@
 
     <button 
         [class]="webSnap.likeBtnClass" 
-        (click)="onLike()"
+        (click)="webSnapsService.onLike(webSnap)"
     >
         👍 {{ webSnap.likes }}
     </button>
-
-    <p>{{ 29.997 | currency:"EUR" }}</p>
 </div>
