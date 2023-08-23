@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {WebSnap} from "../models/web-snap.model";
 import { WebSnapsService } from '../services/web-snaps.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-web-snap',
@@ -11,10 +12,15 @@ export class WebSnapComponent implements OnInit{
   @Input() webSnap!: WebSnap;
 
   constructor(
-    public webSnapsService: WebSnapsService
+    public webSnapsService: WebSnapsService,
+    private router: Router
   ){}
 
   ngOnInit(): void{
+  }
+
+  onViewWebSnap(): void{
+    this.router.navigateByUrl(`websnaps/${this.webSnap.id}`);
   }
 
   onLike(): void{

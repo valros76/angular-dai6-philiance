@@ -13,6 +13,10 @@ import { WebSnapComponent } from './web-snap/web-snap.component';
 import { WebSnapListComponent } from './web-snap-list/web-snap-list.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { AppRoutingModule } from './app-routing.module';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { SingleWebSnapComponent } from './single-web-snap/single-web-snap.component';
 
 /**
  * Pour déclarer ce fichier comme un module, on utilise le décorateur @NgModule, qui utilise 
@@ -36,9 +40,13 @@ import { FooterComponent } from './footer/footer.component';
     WebSnapListComponent,
     HeaderComponent,
     FooterComponent,
+    LandingPageComponent,
+    MainNavComponent,
+    SingleWebSnapComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [
     {

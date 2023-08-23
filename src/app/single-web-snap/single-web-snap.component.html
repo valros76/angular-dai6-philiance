@@ -1,0 +1,16 @@
+<div class="web-snap-card" [ngClass]="{ 'web-snap-card-liked': webSnap.isLiked }">
+    <h2>{{ webSnap.title | uppercase }}</h2>
+    <img [src]="webSnap.imageUrl" [alt]="webSnap.title">
+    <p>
+        {{ webSnap.description }}
+    </p>
+    <small>
+        Mise en ligne le : {{ webSnap.createdDate | date: "dd/MM/yy, à HH:mm" }}
+    </small>
+    <p *ngIf="webSnap.location">
+        À {{ webSnap.location }}
+    </p>
+    <button [class]="webSnap.likeBtnClass" (click)="onLike(webSnap)">
+        👍 {{ webSnap.likes }}
+    </button>
+</div>

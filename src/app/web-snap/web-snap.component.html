@@ -2,18 +2,10 @@
     <h2 [ngStyle]="{ color: 'rgb(0,' + webSnap.likes + ',0)' }">
         {{ webSnap.title | uppercase }}
     </h2>
-
-    <img [src]="webSnap.imageUrl" [alt]="webSnap.title">
-
     <p>{{ webSnap.description }}</p>
-    <small>Mise en ligne : {{ webSnap.createdDate | date: "dd/MM/yyyy, à HH:mm"}}</small>
-
-    <p *ngIf="webSnap.location">À {{ webSnap.location }}</p>
-
     <button 
-        [class]="webSnap.likeBtnClass" 
-        (click)="webSnapsService.onLike(webSnap)"
+        (click)="onViewWebSnap()"
     >
-        👍 {{ webSnap.likes }}
+        Voir le détail
     </button>
 </div>

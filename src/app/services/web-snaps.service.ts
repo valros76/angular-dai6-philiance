@@ -34,7 +34,7 @@ export class WebSnapsService {
     }
 
     getWebSnapById(webSnapId: number): WebSnap{
-        const webSnap = this.webSnaps.find(webSnap => webSnap.id === webSnapId);
+        const webSnap = this.webSnaps.find(webSnap => Number(webSnap.id) === Number(webSnapId));
         if(!webSnap){
             throw new Error("Ce WebSnap n'existe pas !");
         }else{
