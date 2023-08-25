@@ -4,6 +4,7 @@ import {Routes, RouterModule} from "@angular/router";
 import { WebSnapListComponent } from "./web-snap-list/web-snap-list.component";
 import { LandingPageComponent } from "./landing-page/landing-page.component";
 import { SingleWebSnapComponent } from "./single-web-snap/single-web-snap.component";
+import { ObservablesExemplesComponent } from "./observables-exemples/observables-exemples.component";
 
 const routes: Routes = [
     {
@@ -17,6 +18,10 @@ const routes: Routes = [
     {
         path:"websnaps/:id",
         component: SingleWebSnapComponent
+    },
+    {
+        path:"observables-exemples",
+        component:ObservablesExemplesComponent
     }
 ];
 

@@ -64,6 +64,7 @@ export class ObservablesPreview {
     }
 
     setObservableMapMethod(observableType: string): void {
+
         this.instructionObservable = interval(500).pipe(
             take(12),
             map(value => value % 2 === 0 ? "A" : "B"),
@@ -72,7 +73,7 @@ export class ObservablesPreview {
                     console.log(`L'observable de haut niveau appelle l'objet %c${nameObject}`, `color: ${this.translateNameObjectInColor(nameObject)}`)
             ),
             this.defineObservableMapMethod(observableType, (nameObject: "A" | "B") => this.getObjectObservable$(nameObject))
-        ).subscribe();
+            ).subscribe();
     }
 
     // FIN DE LA CLASSE

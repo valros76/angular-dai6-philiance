@@ -9,6 +9,9 @@ import {ObservablesPreview} from "../models/observables-preview.model";
 export class ObservablesExemplesComponent implements OnInit{
 
   observableMergeMap!: ObservablesPreview;
+  observableConcatMap!: ObservablesPreview;
+  observableExhaustMap!: ObservablesPreview;
+  observableSwitchMap!: ObservablesPreview;
 
   ngOnInit(): void{
     this.observableMergeMap = new ObservablesPreview(
@@ -18,7 +21,37 @@ export class ObservablesExemplesComponent implements OnInit{
       "Launch 💻",
       "Launch 🧙‍♂️",
       "💻 vs 🧙‍♂️",
-      "mergeMapObservable"
+      "mergeMapExemple"
+    );
+
+    this.observableConcatMap = new ObservablesPreview(
+      "Exemple concatMap",
+      "💻",
+      "🧙‍♂️",
+      "Launch 💻",
+      "Launch 🧙‍♂️",
+      "💻 vs 🧙‍♂️",
+      "concatMapExemple"
+    );
+
+    this.observableExhaustMap = new ObservablesPreview(
+      "Exemple ExhaustMap",
+      "💻",
+      "🧙‍♂️",
+      "Launch 💻",
+      "Launch 🧙‍♂️",
+      "💻 vs 🧙‍♂️",
+      "exhaustMapExemple"
+    );
+
+    this.observableSwitchMap = new ObservablesPreview(
+      "Exemple SwitchMap",
+      "💻",
+      "🧙‍♂️",
+      "Launch 💻",
+      "Launch 🧙‍♂️",
+      "💻 vs 🧙‍♂️",
+      "switchMapExemple"
     );
   }
 

@@ -19,6 +19,7 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { SingleWebSnapComponent } from './single-web-snap/single-web-snap.component';
 import { ObservablesExemplesComponent } from './observables-exemples/observables-exemples.component';
 import { ObservablesPreviewComponent } from './observables-preview/observables-preview.component';
+import { CatFactComponent } from './cat-fact/cat-fact.component';
 
 /**
  * Pour déclarer ce fichier comme un module, on utilise le décorateur @NgModule, qui utilise 
@@ -46,7 +47,8 @@ import { ObservablesPreviewComponent } from './observables-preview/observables-p
     MainNavComponent,
     SingleWebSnapComponent,
     ObservablesExemplesComponent,
-    ObservablesPreviewComponent
+    ObservablesPreviewComponent,
+    CatFactComponent
   ],
   imports: [
     BrowserModule,

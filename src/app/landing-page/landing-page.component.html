@@ -1,5 +1,3 @@
-<button
-    (click)="onContinue()"
->
-    Continuer
-</button>
+<app-cat-fact *ngFor="let catFactElement of catFacts$ | async" [catFact]="catFactElement"></app-cat-fact>
+
+<button (click)="onContinue()">Continuer</button>
