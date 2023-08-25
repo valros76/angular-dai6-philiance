@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { WebSnap } from "../models/web-snap.model";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({
     providedIn: "root"
@@ -29,8 +31,16 @@ export class WebSnapsService {
         }
     ];
 
+    constructor(
+        private http: HttpClient
+    ){}
+
     getAllWebSnaps(): WebSnap[]{
         return this.webSnaps;
+    }
+
+    getAllWebSnapsOnServer(): Observable<WebSnap[]>{
+        return this.http.get<WebSnap[]>("http://localhost:3000/websnaps");
     }
 
     getWebSnapById(webSnapId: number): WebSnap{
@@ -40,6 +50,10 @@ export class WebSnapsService {
         }else{
             return webSnap;
         }
+    }
+
+    getWebSnapByIdOnServer(webSnapId: number): Observable<WebSnap>{
+        return this.http.get<WebSnap>(`http://localhost:3000/websnaps/${webSnapId}`);
     }
 
     onLike(webSnap: WebSnap): void {

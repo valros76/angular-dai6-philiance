@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {WebSnap} from "../models/web-snap.model";
 import { WebSnapsService } from '../services/web-snaps.service';
 import {ActivatedRoute} from "@angular/router";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-single-web-snap',
@@ -10,6 +11,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class SingleWebSnapComponent implements OnInit{
   webSnap!:WebSnap;
+  webSnap$!: Observable<WebSnap>;
 
   constructor(
     private webSnapsService: WebSnapsService,
@@ -19,8 +21,7 @@ export class SingleWebSnapComponent implements OnInit{
   ngOnInit(): void{
     const webSnapId = Number(this.router.snapshot.params["id"]);
 
-    this.webSnap = this.webSnapsService.getWebSnapById(webSnapId);
-    console.log(this.webSnap);
+    this.webSnap$ = this.webSnapsService.getWebSnapByIdOnServer(webSnapId);
   }
 
   onLike(webSnap: WebSnap){}

@@ -1,5 +1,12 @@
-<div class="web-snap-card" [ngClass]="{ 'web-snap-card-liked': webSnap.isLiked }">
+<div 
+    class="web-snap-card"
+    [ngClass]="{ 'web-snap-card-liked': webSnap.isLiked }"
+    *ngIf="webSnap$ | async as webSnap"
+>
     <h2>{{ webSnap.title | uppercase }}</h2>
+
+    <p><a routerLink="/websnaps">Retourner sur la liste des websnaps</a></p>
+
     <img [src]="webSnap.imageUrl" [alt]="webSnap.title">
     <p>
         {{ webSnap.description }}

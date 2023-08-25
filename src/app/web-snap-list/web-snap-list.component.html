@@ -1,1 +1,1 @@
-<app-web-snap *ngFor="let webSnapElement of webSnaps" [webSnap]="webSnapElement"></app-web-snap>
+<app-web-snap *ngFor="let webSnapElement of webSnaps$ | async" [webSnap]="webSnapElement"></app-web-snap>

@@ -2,7 +2,7 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { registerLocaleData } from '@angular/common';
 import * as fr from "@angular/common/locales/fr";
-
+import {HttpClientModule} from "@angular/common/http";
 /**
  * Dans le fichier app.module.ts, qui est le module de notre composant App (le composant principal de notre
  * application), on devra importer et déclarer nos différents composants pour les rendre accessible dans 
@@ -17,6 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { SingleWebSnapComponent } from './single-web-snap/single-web-snap.component';
+import { ObservablesExemplesComponent } from './observables-exemples/observables-exemples.component';
+import { ObservablesPreviewComponent } from './observables-preview/observables-preview.component';
 
 /**
  * Pour déclarer ce fichier comme un module, on utilise le décorateur @NgModule, qui utilise 
@@ -42,11 +44,14 @@ import { SingleWebSnapComponent } from './single-web-snap/single-web-snap.compon
     FooterComponent,
     LandingPageComponent,
     MainNavComponent,
-    SingleWebSnapComponent
+    SingleWebSnapComponent,
+    ObservablesExemplesComponent,
+    ObservablesPreviewComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     {
