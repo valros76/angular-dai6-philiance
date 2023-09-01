@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {take, tap} from "rxjs/operators";
+import {NgForm} from "@angular/forms";
 
 @Component({
     selector: "app-landing-page",
@@ -12,6 +13,7 @@ import {take, tap} from "rxjs/operators";
 export class LandingPageComponent implements OnInit{
 
     catFacts$!: Observable<any>;
+    userEmail: string = "text@mail.fr";
 
     constructor(
         private router: Router,
@@ -28,5 +30,9 @@ export class LandingPageComponent implements OnInit{
 
     onContinue(): void{
         this.router.navigateByUrl("websnaps");
+    }
+
+    onSubmitForm(form: NgForm): void{
+        console.log(form.value);
     }
 }

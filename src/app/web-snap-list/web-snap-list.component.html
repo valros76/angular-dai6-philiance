@@ -1,1 +1,3 @@
+<button (click)="onAddNewWebSnap()">Créer un WebSnap</button>
+
 <app-web-snap *ngFor="let webSnapElement of webSnaps$ | async" [webSnap]="webSnapElement"></app-web-snap>

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { registerLocaleData } from '@angular/common';
 import * as fr from "@angular/common/locales/fr";
 import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 /**
  * Dans le fichier app.module.ts, qui est le module de notre composant App (le composant principal de notre
  * application), on devra importer et déclarer nos différents composants pour les rendre accessible dans 
@@ -20,6 +21,8 @@ import { SingleWebSnapComponent } from './single-web-snap/single-web-snap.compon
 import { ObservablesExemplesComponent } from './observables-exemples/observables-exemples.component';
 import { ObservablesPreviewComponent } from './observables-preview/observables-preview.component';
 import { CatFactComponent } from './cat-fact/cat-fact.component';
+import { NewWebSnapComponent } from './new-web-snap/new-web-snap.component';
+import { httpInterceptorProviders } from './interceptors';
 
 /**
  * Pour déclarer ce fichier comme un module, on utilise le décorateur @NgModule, qui utilise 
@@ -48,18 +51,22 @@ import { CatFactComponent } from './cat-fact/cat-fact.component';
     SingleWebSnapComponent,
     ObservablesExemplesComponent,
     ObservablesPreviewComponent,
-    CatFactComponent
+    CatFactComponent,
+    NewWebSnapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
       provide: LOCALE_ID,
       useValue: "fr-FR"
-    }
+    },
+    httpInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })

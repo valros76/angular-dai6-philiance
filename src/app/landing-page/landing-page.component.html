@@ -1,3 +1,11 @@
 <app-cat-fact *ngFor="let catFactElement of catFacts$ | async" [catFact]="catFactElement"></app-cat-fact>
 
 <button (click)="onContinue()">Continuer</button>
+
+<form #newsletterForm="ngForm" (ngSubmit)="onSubmitForm(newsletterForm)">
+    <label for="emailInput">
+        Inscrivez-vous pour recevoir notre newsletter et connaître nos dernières actualités
+    </label>
+    <input type="email" placeholder="votre@email.fr" name="emailInput" id="emailInput" [(ngModel)]="userEmail">
+    <button type="submit">Envoyer</button>
+</form>

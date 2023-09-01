@@ -1,0 +1,38 @@
+<section class="form-card">
+    <h2>Créer un nouveau WebSnap</h2>
+
+    <form [formGroup]="webSnapForm">
+        <label for="title">
+            Titre du WebSnap
+        </label>
+        <input type="text" id="title" formControlName="title">
+
+        <label for="description">
+            Description du WebSnap
+        </label>
+        <textarea id="description" formControlName="description" rows="4"></textarea>
+
+        <label for="imageUrl">
+            Chemin de l'image
+        </label>
+        <input type="text" id="imageUrl" formControlName="imageUrl">
+
+        <label for="location">
+            Localisation de création du WebSnap
+        </label>
+        <input type="text" id="location" formControlName="location">
+
+        <div class="web-snap-card" *ngIf="webSnapPreview$ | async as webSnap">
+            <h2>{{ webSnap.title }}</h2>
+            <p>{{ webSnap.createdDate | date: "dd/MM/yy, à HH:mm" }}</p>
+            <img [src]="webSnap.imageUrl" [alt]="webSnap.title">
+            <p>{{ webSnap.description }}</p>
+            <p *ngIf="webSnap.location">À {{ webSnap.location }}</p>
+        </div>
+
+        <button type="submit" (click)="onSubmitForm()" [disabled]="webSnapForm.invalid">
+            Créer
+        </button>
+    </form>
+
+</section>
