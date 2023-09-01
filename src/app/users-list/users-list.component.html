@@ -1,0 +1,3 @@
+<section class="users-sections">
+    <app-user *ngFor="let userElement of users$ | async" [user]="userElement"></app-user>
+</section>

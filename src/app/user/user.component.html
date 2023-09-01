@@ -1,0 +1,6 @@
+<div *ngIf="user" class="user-card">
+    <h2 *ngIf="user.name">{{ user.name.first }} {{ user.name.last }}</h2>
+    <img [src]="user.picture.medium" [alt]="user.name.last && user.name.first" *ngIf="user.picture && user.name" class="user-card-img">
+    <p *ngIf="user.email">Email : {{ user.email }}</p>
+    <p *ngIf="user.phone">Tel : {{ user.phone | customPhone}}</p>
+</div>

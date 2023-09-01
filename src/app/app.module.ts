@@ -23,6 +23,11 @@ import { ObservablesPreviewComponent } from './observables-preview/observables-p
 import { CatFactComponent } from './cat-fact/cat-fact.component';
 import { NewWebSnapComponent } from './new-web-snap/new-web-snap.component';
 import { httpInterceptorProviders } from './interceptors';
+import { UsersListComponent } from './users-list/users-list.component';
+import { UserComponent } from './user/user.component';
+
+/*Import custom pipes*/
+import { CustomPhonePipe } from './pipes/custom-phone.pipe';
 
 /**
  * Pour déclarer ce fichier comme un module, on utilise le décorateur @NgModule, qui utilise 
@@ -52,7 +57,10 @@ import { httpInterceptorProviders } from './interceptors';
     ObservablesExemplesComponent,
     ObservablesPreviewComponent,
     CatFactComponent,
-    NewWebSnapComponent
+    NewWebSnapComponent,
+    UsersListComponent,
+    UserComponent,
+    CustomPhonePipe,
   ],
   imports: [
     BrowserModule,
